@@ -17,12 +17,13 @@ if [[ $TERM = *256color* || $TERM = *rxvt* ]]; then
     purple="%F{190}"
     hotpink="%F{161}"
     limegreen="%F{118}"
+    green="%F{40}"
 else
     turquoise="$fg[cyan]"
     orange="$fg[magenta]"
     purple="$fg[yellow]"
     hotpink="$fg[red]"
-    limegreen="$fg[green]"
+    limegreen="$fg[00d700]"
 fi
 
 # enable VCS systems you use
@@ -87,4 +88,4 @@ function steeef_precmd {
 add-zsh-hook precmd steeef_precmd
 
 PROMPT=$'
-%{$purple%}吉%{$reset_color%} in %{$limegreen%}%~%{$reset_color%}$(rvm-prompt " @%{$fg[red]%} " v g "%{$reset_color%}")$vcs_info_msg_0_%{$orange%} ✌(-‿-)✌ %{$reset_color%} '
+%{$purple%}吉%{$reset_color%} in %{$limegreen%}%~%{$reset_color%} @$(rvm-prompt " %{$fg[red]%}❂ " v g "%{$reset_color%}") %{$green%}%B⬡%b%{$reset_color%} %{$green%}$(nvm_prompt_info)%{$reset_color%}$vcs_info_msg_0_%{$orange%} ✌(-‿-)✌ %{$reset_color%} '
